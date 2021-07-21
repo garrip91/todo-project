@@ -16,6 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from todo.views import signupuser, currenttodos, logoutuser, home, loginuser
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # Auth:
+    path('signup/', signupuser, name='signupuser'),
+    path('login/', loginuser, name='loginuser'),
+    path('logout/', logoutuser, name='logoutuser'),
+    
+    # Todos:
+    path('', home, name='home'),
+    path('current/', currenttodos, name='currenttodos'),
 ]
