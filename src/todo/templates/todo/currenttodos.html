@@ -2,16 +2,16 @@
 
 
 {% block title %}
-    Current ToDos
+    Текущие события
 {% endblock %}
 
 {% block content %}
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
             {% if todos %}
-                <h1>{{ todos.count }} Current Todo{{ todos.count|pluralize }}</h1>
+                <h1>{{ todos.count }} Текущие события{{ todos.count|pluralize }}</h1>
             {% else %}
-                <h1>Current Todos</h1>
+                <h1>Текущие события</h1>
             {% endif %}
         </div>
     </div>
@@ -22,15 +22,15 @@
                     {% for todo in todos %}
                         <a href="{% url 'viewtodo' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}">
 						    <b>{{ todo.title }}</b>
-							{% if todo.memo %} - {{ todo.memo|truncatechars:30 }}{% endif %}
+							{% if todo.description %} - {{ todo.description|truncatechars:30 }}{% endif %}
 						</a>
                     {% endfor %}
                 </div>
             {% else %}
                 <div class="text-center">
-                    <h2>Looks like you don't have any todos! Nice work.</h2>
+                    <h2>Похоже, у Вас нет текущих событий! Приятной работы.</h2>
                     <br>
-                    <a role="button" class="btn btn-primary" href="{% url 'createtodo' %}">New Todo</a>
+                    <a role="button" class="btn btn-primary" href="{% url 'createtodo' %}">Новое событие</a>
                 </div>
             {% endif %}
         </div>

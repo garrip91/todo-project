@@ -17,6 +17,6 @@ class Todo(models.Model):
         return self.title
         
     class Meta:
-        verbose_name = "Список дел"
-        verbose_name_plural = "Список дел"
+        verbose_name = "Список событий"
+        verbose_name_plural = "Список событий"
         ordering = ['title']
