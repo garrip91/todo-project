@@ -6,12 +6,17 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Todo(models.Model):
 
-    title = models.CharField(max_length=100)
-    memo = models.TextField(blank=True)
-    created = models.DateTimeField(auto_now_add=True)
-    datecompleted = models.DateTimeField(blank=True, null=True)
-    important = models.BooleanField(default=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100, verbose_name='Название')
+    description = models.TextField(blank=True, verbose_name='Описание')
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Создано')
+    datecompleted = models.DateTimeField(blank=True, null=True, verbose_name='Дата и время завершения')
+    important = models.BooleanField(default=False, verbose_name='Приоритетность')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
     
     def __str__(self):
         return self.title
+        
+    class Meta:
+        verbose_name = "Список дел"
+        verbose_name_plural = "Список дел"
+        ordering = ['title']
