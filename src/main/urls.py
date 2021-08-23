@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from todo.views import signupuser, currenttodos, logoutuser, home, loginuser, createtodo, viewtodo, completetodo, deletetodo, completedtodos
 
@@ -35,4 +35,7 @@ urlpatterns = [
     path('todo/<int:todo_pk>/', viewtodo, name='viewtodo'),
     path('todo/<int:todo_pk>/complete/', completetodo, name='completetodo'),
     path('todo/<int:todo_pk>/delete/', deletetodo, name='deletetodo'),
+    
+    # API:
+    path('api/', include('api.urls')),
 ]
