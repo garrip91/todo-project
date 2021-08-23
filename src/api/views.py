@@ -1,20 +1,14 @@
 from rest_framework import generics, permissions
-
 from .serializers import TodoSerializer, TodoCompleteSerializer
 from todo.models import Todo
-
 from django.utils import timezone
-
 from django.views.decorators.csrf import csrf_exempt
-
 from rest_framework.parsers import JSONParser
-
 from django.http import JsonResponse
-
 from django.db import IntegrityError
 from django.contrib.auth.models import User
-
 from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate
 
 
 # Create your views here.
@@ -29,7 +23,23 @@ def signup(request):
             token = Token.objects.create(user=user)
             return JsonResponse({'token': str(token)}, status=201)
         except IntegrityError:
-            return JsonResponse({'error': 'Данное имя пользователя уже занято. Пожалуйста, выберите новое имя пользователя!'}, status=201)
+            return JsonResponse({'error': 'Данное имя пользователя уже занято. Пожалуйста, выберите новое имя пользователя!'}, status=400)
+            
+            
+@csrf_exempt
+def login(request):
+    
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        user = authenticate(request, username=data['username'], password=data['password'])
+        if user is None:
+            return JsonResponse({'error': 'Не получается авторизовать пользователя с такими логином и паролем. Пожалуйста, проверьте правильность логина и пароля!'}, status=400)
+        else:
+            try:
+                token = Token.objects.get(user=user)
+            except:
+                token = Token.objects.create(user=user)
+            return JsonResponse({'token': str(token)}, status=200)
 
 
 class TodoCompletedList(generics.ListAPIView):
