@@ -1,19 +1,19 @@
 <br/>
 <p align="center">
-  <a href="https://github.com/garrip91/KINOMONSTER">
+  <a href="https://github.com/garrip91/todo-project">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Сайт "КиноМонстр"</h3>
+  <h3 align="center">Веб-проект (сервис) "Список событий" по созданию, редактированию и удалению событий/дел</h3>
 
   <p align="center">
-    Readme сайта "КиноМонстр"
+    Readme веб-проекта (сервиса) "Список событий"
     <br/>
     <br/>
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/Garrip91/KINOMONSTER?color=dark-green) ![Issues](https://img.shields.io/github/issues/Garrip91/KINOMONSTER) 
+![Contributors](https://img.shields.io/github/contributors/Garrip91/todo-project?color=dark-green) ![Issues](https://img.shields.io/github/issues/Garrip91/todo-project) 
 
 ## Table Of Contents
 
