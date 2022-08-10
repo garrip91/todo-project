@@ -32,16 +32,16 @@
 
 ![Screen Shot](images/screenshot.png)
 
-Этот проект является сайтом, на котором можно:
+Этот проект является сервисом, на котором можно:
 
 
-* Просматривать информацию о некоторых фильмах
-* Регистрироваться
-* Авторизовываться
+* Создавать события
+* Редактировать события
+* Удалять события
 
 ## Built With
 
-Сайт создан с помощью Python, Django
+Веб-проект (сервис) создан с помощью Python, Django
 
 ## Getting Started
 
@@ -93,7 +93,7 @@ python manage.py runserver
 
 ## Usage
 
-Данный сервис Вы можете использовать для просмотра информации о некоторых фильмах, регистрироваться, авторизовываться
+Данный веб-проект (сервис) Вы можете использовать для создания, редактирования и удаления событий
 
 ## Contributing
 
@@ -109,7 +109,7 @@ python manage.py runserver
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/Garrip91/KINOMONSTER/blob/main/LICENSE.md) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/Garrip91/todo-project/blob/main/LICENSE.md) for more information.
 
 ## Authors
 
@@ -118,5 +118,5 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Garrip91/KIN
 ## Acknowledgements
 
 * [Garrip91](https://github.com/garrip91)
-* [KINOMONSTER](https://github.com/garrip91/KINOMONSTER)
+* [todo-project](https://github.com/garrip91/todo-project)
 * [Python](https://www.python.org/)
